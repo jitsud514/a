@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoリスト</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">ToDoリスト</h1>
+        <form id="task-form" class="task-form" autocomplete="off">
+          <label class="task-form__label" for="task-input">新しいタスク</label>
+          <div class="task-form__controls">
+            <input
+              id="task-input"
+              class="task-form__input"
+              type="text"
+              name="task"
+              placeholder="タスクを入力してください"
+              required
+            />
+            <button type="submit" class="task-form__submit">追加</button>
+          </div>
+        </form>
+      </header>
+
+      <section class="app__filters" aria-label="フィルター">
+        <button class="filter-button is-active" data-filter="all">すべて</button>
+        <button class="filter-button" data-filter="active">未完了</button>
+        <button class="filter-button" data-filter="completed">完了</button>
+      </section>
+
+      <section class="task-list-section" aria-live="polite">
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty-state" hidden>
+          タスクがありません。新しいタスクを追加しましょう！
+        </p>
+      </section>
+
+      <footer class="app__footer">
+        <p id="task-counter" class="task-counter">0 件のタスク</p>
+        <button id="clear-completed" class="clear-completed" type="button">
+          完了したタスクを削除
+        </button>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
